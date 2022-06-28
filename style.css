@@ -1,0 +1,166 @@
+/*gallery part */
+div.gallery {
+    margin: 10px;
+    border: 1px solid #ccc;
+    float: center;
+    display: flex;
+    box-sizing: border-box;
+}
+
+div.gallery img {
+    width: 164;
+    height: 242;
+}
+
+div.desc {
+    text-align: left;
+    display: inline-block;
+    font-weight: bold;
+}
+
+div.control {
+    margin: 10px;
+    border: 1px solid #111;
+    float: center;
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    height: auto;
+    width: 300px;
+}
+
+.header {
+    padding: 40px;
+    text-align: left;
+    background: #000000;
+    color: rgb(194, 0, 0);
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.footer {
+    left: 0%;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: #ccc;
+    text-align: left;
+}
+
+* {
+    box-sizing: border-box;
+}
+  
+.responsive {
+    padding: 0 6px;
+    float: center;
+    /*width: 24.99999%;*/
+    display: block;
+
+}
+  
+@media only screen and (max-width: 700px) {
+    .responsive {
+      width: 49.99999%;
+      margin: 6px 0;
+    }
+}
+  
+@media only screen and (max-width: 500px) {
+    .responsive {
+      width: 100%;
+    }
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+
+  /*nav bar*/
+ul {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: #111;
+  }
+
+  /* thiet ke thong so va dinh dang trang web */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+form {
+    width: 400px;
+    border: solid 1px #EBEBEB;
+    padding: 5rem;
+}
+
+.button {
+    margin-top: 2rem;
+    color: rgb(255, 250, 250);
+    background-color: rgb(0, 128, 49);
+    border-style: none;
+    font-size: 13px;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    padding: 12px 20px;
+}
+.button:hover {
+    background-color: rgb(1, 73, 1);
+}
+.door_off{
+    width: 200px;
+    height: 200px;
+    margin: auto;
+}
+.door_on{
+    width: 200px;
+    height: 200px;
+    margin: auto;
+}
+
+.fan_off{
+    width: 200px;
+    height: 200px;
+    margin: auto;
+}
+.fan_on{
+    width: 200px;
+    height: 200px;
+    margin: auto;
+}

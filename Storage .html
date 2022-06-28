@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Yu-gi-oh shop storage</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <ul>
+        <li><a class="active" href="storecontrol.html">StoreControl</a></li>
+        <li><a class="active" href="Storage .html">Storage</a></li>
+    </ul>
+<div class="header">
+    <a>Storage</a> 
+</div>
+<div class="responsive">
+    <div class="gallery">
+            <img src="cards\DMhospitality.jpg" alt="DMhospitality" width="164px" height="242px">
+        <div class="desc">
+            <h1 id="name1">Name</h1><br>
+            <h2 id="price1">Price</h2><br>
+            <dd class="stock box">
+                <a>Stock:</a>
+                <span id="stock1">wait</span>
+                <button type="button" class="button" onclick="c1a1()">Add1</button>
+                <button type="button" class="button" onclick="c1s1()">Sell1</button>
+                <button type="button" class="button" onclick="c1a10()">Add10</button>
+                <button type="button" class="button" onclick="c1s10()">Sell10</button>
+            </dd>
+        </div>
+    </div>
+</div>
+
+<div class="responsive">
+    <div class="gallery">
+            <img src="cards\DMlorpar.jpg" alt="DMlorpar" width="164px" height="242px">
+        <div class="desc">
+            <h1 id="name2"></h1><br>
+            <h2 id="price2">Price</h2><br>
+            <dd class="stock box">
+                <a>Stock:</a>
+                <span id="stock2">wait</span>
+                <button type="button" class="button" onclick="c2a1()">Add1</button>
+                <button type="button" class="button" onclick="c2s1()">Sell1</button>
+                <button type="button" class="button" onclick="c2a10()">Add10</button>
+                <button type="button" class="button" onclick="c2s10()">Sell10</button>
+            </dd>
+        </div>
+    </div>
+</div>
+
+<div class="responsive">
+    <div class="gallery">
+            <img src="cards\DMnudyarl.jpg" alt="DMnudyarl" width="164px" height="242px">
+        <div class="desc">
+            <h1 id="name3"></h1><br>
+            <h2 id="price3">Price</h2><br>
+            <dd class="stock box">
+                <a>Stock:</a>
+                <span id="stock3">wait</span>
+                <button type="button" class="button" onclick="c3a1()">Add1</button>
+                <button type="button" class="button" onclick="c3s1()">Sell1</button>
+                <button type="button" class="button" onclick="c3a10()">Add10</button>
+                <button type="button" class="button" onclick="c3s10()">Sell10</button>
+            </dd>
+        </div>
+    </div>
+</div>
+
+<div class="responsive">
+    <div class="gallery">
+            <img src="cards\DMsendoff.jpg" alt="DMsendoff" width="164px" height="242px">
+        <div class="desc">
+            <h1 id="name4"></h1><br>
+            <h2 id="price4">Price</h2><br>
+            <dd class="stock box">
+                <a>Stock:</a>
+                <span id="stock4">wait</span>
+                <button type="button" class="button" onclick="c4a1()">Add1</button>
+                <button type="button" class="button" onclick="c4s1()">Sell1</button>
+                <button type="button" class="button" onclick="c4a10()">Add10</button>
+                <button type="button" class="button" onclick="c4s10()">Sell10</button>
+            </dd>
+        </div>
+    </div>
+</div>
+
+<div class="responsive">
+    <div class="gallery">
+            <img src="cards\DMsheou.jpg" alt="DMsheou" width="164px" height="242px">
+        <div class="desc">
+            <h1 id="name5"></h1><br>
+            <h2 id="price5">Price</h2><br>
+            <dd class="stock box">
+                <a>Stock:</a>
+                <span id="stock5">wait</span>
+                <button type="button" class="button" onclick="c5a1()">Add1</button>
+                <button type="button" class="button" onclick="c5s1()">Sell1</button>
+                <button type="button" class="button" onclick="c5a10()">Add10</button>
+                <button type="button" class="button" onclick="c5s10()">Sell10</button>
+            </dd>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <h3 style="color:red;">ABOUT US</h3><br>
+    <p>Lam Hong Thai</p><br>
+    <p>Nguyen An Long An</p><br>
+    <p>Phan Hoang Phuc</p><br>
+    <p>Le Thi Thanh Thu</p>
+</div>
+<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+
+<script type="module">
+
+
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyBEhcNxg2mfrvw71ZkP3tI2nYw67T-yjyA",
+        authDomain: "webdemo-fb907.firebaseapp.com",
+        databaseURL: "https://webdemo-fb907-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "webdemo-fb907",
+        storageBucket: "webdemo-fb907.appspot.com",
+        messagingSenderId: "271305531838",
+        appId: "1:271305531838:web:43adb4748115f3781119ef"
+    };
+    // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+
+
+    //functions
+
+    var Name1 = document.getElementById('name1');
+    var Stock1 = document.getElementById('stock1');
+    var Price1 = document.getElementById('price1');
+    var dbRef1 = firebase.database().ref().child('DMhosp');
+    var dbRefname1 = dbRef1.child('name');
+    var dbRefstock1 = dbRef1.child('stock');
+    var dbRefprice1 = dbRef1.child('price');
+    var Name2 = document.getElementById('name2');
+    var Stock2 = document.getElementById('stock2');
+    var Price2 = document.getElementById('price2');
+    var dbRef2 = firebase.database().ref().child('DMlorpar');
+    var dbRefname2 = dbRef2.child('name');
+    var dbRefstock2 = dbRef2.child('stock');
+    var dbRefprice2 = dbRef2.child('price');
+    var Name3 = document.getElementById('name3');
+    var Stock3 = document.getElementById('stock3');
+    var Price3 = document.getElementById('price3');
+    var dbRef3 = firebase.database().ref().child('DMnudy');
+    var dbRefname3 = dbRef3.child('name');
+    var dbRefstock3 = dbRef3.child('stock');
+    var dbRefprice3 = dbRef3.child('price');
+    var Name4 = document.getElementById('name4');
+    var Stock4 = document.getElementById('stock4');
+    var Price4 = document.getElementById('price4');
+    var dbRef4 = firebase.database().ref().child('DMsend');
+    var dbRefname4 = dbRef4.child('name');
+    var dbRefstock4 = dbRef4.child('stock');
+    var dbRefprice4 = dbRef4.child('price');
+    var Name5 = document.getElementById('name5');
+    var Stock5 = document.getElementById('stock5');
+    var Price5 = document.getElementById('price5');
+    var dbRef5 = firebase.database().ref().child('DMsheou');
+    var dbRefname5 = dbRef5.child('name');
+    var dbRefstock5 = dbRef5.child('stock');
+    var dbRefprice5 = dbRef5.child('price');
+    dbRefname1.on('value', snap => Name1.innerHTML = snap.val());
+    dbRefstock1.on('value', snap => Stock1.innerHTML = snap.val());
+    dbRefprice1.on('value', snap => Price1.innerHTML = 'Price: '+snap.val());
+    dbRefname2.on('value', snap => Name2.innerHTML = snap.val());
+    dbRefstock2.on('value', snap => Stock2.innerHTML = snap.val());
+    dbRefprice2.on('value', snap => Price2.innerHTML = 'Price: '+snap.val());
+    dbRefname3.on('value', snap => Name3.innerHTML = snap.val());
+    dbRefstock3.on('value', snap => Stock3.innerHTML = snap.val());
+    dbRefprice3.on('value', snap => Price3.innerHTML = 'Price: '+snap.val());
+    dbRefname4.on('value', snap => Name4.innerHTML = snap.val());
+    dbRefstock4.on('value', snap => Stock4.innerHTML = snap.val());
+    dbRefprice4.on('value', snap => Price4.innerHTML = 'Price: '+snap.val());
+    dbRefname5.on('value', snap => Name5.innerHTML = snap.val());
+    dbRefstock5.on('value', snap => Stock5.innerHTML = snap.val());
+    dbRefprice5.on('value', snap => Price5.innerHTML = 'Price: '+snap.val());
+
+</script>
+
+<script src="./script.js"></script>
+</body>
+</html>
